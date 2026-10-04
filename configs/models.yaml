@@ -1,0 +1,26 @@
+models:
+  llama_3_1_8b:
+    ollama_tag:
+      jetson: "llama3.1:8b-instruct-q4_K_M"
+      spark:  "llama3.1:8b-instruct-q4_K_M"
+    context_len: 8192
+  qwen_2_5_7b:
+    ollama_tag:
+      jetson: "qwen2.5:7b-instruct-q4_K_M"
+      spark:  "qwen2.5:7b-instruct-q4_K_M"
+    context_len: 8192
+  phi_3_5_mini:
+    ollama_tag:
+      jetson: "phi3.5:3.8b-mini-instruct-q4_K_M"
+      spark:  "phi3.5:3.8b-mini-instruct-q4_K_M"
+    context_len: 4096
+  hermes3_8b:
+    ollama_tag:
+      jetson: "hermes3:8b-llama3.1-q4_K_M"
+      spark:  "hermes3:8b-llama3.1-q4_K_M"
+    context_len: 8192
+  llama3_groq_tooluse_8b:
+    ollama_tag:
+      jetson: "llama3-groq-tool-use:8b-q4_K_M"
+      spark:  "llama3-groq-tool-use:8b-q4_K_M"
+    context_len: 8192

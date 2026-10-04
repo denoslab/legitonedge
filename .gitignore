@@ -1,0 +1,27 @@
+# Python / uv
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.venv/
+.uv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Benchmark outputs and downloaded data (regenerate with `legit-edge pin datasets` / `run`)
+results/
+logs/
+data/
+models/
+*.gguf
+*.safetensors
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

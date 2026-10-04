@@ -1,0 +1,11 @@
+# Deployment scenarios: weight vectors over the THREE systems dimensions that
+# form the reliability composite (latency, throughput, energy). Calibration and
+# output stability are reported as SEPARATE axes (calibration mirrors accuracy
+# under uniform overconfidence; output stability was not activated by the
+# workload), so they are not composite dimensions and carry no scenario weight.
+# reliability_composite() normalizes by the sum of weights, so any positive
+# vector works; these are the three illustrative scenarios of the paper.
+profiles:
+  balanced:            {latency: 0.3333, throughput: 0.3333, energy: 0.3333}
+  latency_critical:    {latency: 0.6, throughput: 0.2, energy: 0.2}
+  energy_constrained:  {latency: 0.2, throughput: 0.2, energy: 0.6}

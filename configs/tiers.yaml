@@ -1,0 +1,16 @@
+tiers:
+  jetson:
+    host: "${LEGIT_EDGE_JETSON_HOST:-jetson.local}"
+    port: 11434
+    # SSH login used to stream tegrastats for energy telemetry. Empty means
+    # ssh uses your local username or a matching ~/.ssh/config entry.
+    ssh_user: "${LEGIT_EDGE_JETSON_SSH_USER:-}"
+    quantization: "Q4_K_M"
+    notes: "Jetson Orin Nano Super 8GB. On device, run: OLLAMA_HOST=0.0.0.0 ollama serve &"
+  spark:
+    host: "${LEGIT_EDGE_SPARK_HOST:-spark.local}"
+    port: 11434
+    # SSH login used to stream nvidia-smi power.draw for energy telemetry.
+    ssh_user: "${LEGIT_EDGE_SPARK_SSH_USER:-}"
+    quantization: "Q4_K_M"
+    notes: "DGX Spark. On device, run: OLLAMA_HOST=0.0.0.0 ollama serve &"

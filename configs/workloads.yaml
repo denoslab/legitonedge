@@ -1,0 +1,40 @@
+workloads:
+  math_gsm8k_hard:
+    name: "GSM8K-Hard"
+    hf_id: "reasoning-machines/gsm-hard"
+    split: "train"
+    n_standard: 200
+    n_megaquick: 17
+    seed: 42
+
+  reasoning_bbh:
+    name: "BBH-Hard subset"
+    hf_id: "lukaemon/bbh"
+    subtasks: ["logical_deduction_seven_objects", "tracking_shuffled_objects_seven_objects", "navigate"]
+    n_per_subtask: 67    # 67*3 = 201
+    n_megaquick: 17
+    seed: 42
+
+  tooluse_bfcl:
+    name: "BFCL v3 live function-call subset"
+    hf_id: "gorilla-llm/Berkeley-Function-Calling-Leaderboard"
+    # BFCL is stored as raw per-category JSONL files, not a standard HF dataset, so we
+    # load specific files via hf_hub_download. We use only live_simple so that all sampled
+    # items have ground-truth coverage (GT file is BFCL_v4_live_simple.json, IDs are
+    # compatible with v3 question IDs). live_multiple / parallel / parallel_multiple are
+    # excluded because their GT is not fetched, causing 0.0 fallback scores.
+    live_files:
+      - "BFCL_v3_live_simple.json"
+    n_standard: 100
+    n_megaquick: 16
+    seed: 42
+
+  tooluse_mt:
+    name: "Bespoke multi-step tool-use (Path B agentic workload)"
+    # Author-generated, fully deterministic (no network). generate_multiturn_tasks(seed=42)
+    # builds a pool of n_pool multi-turn, state-dependent tasks over the ToolSandbox toolset;
+    # pin.py freezes the seed-42 standard / mega-quick subsets. Oracle = state-diff via replay.
+    n_pool: 24
+    n_standard: 24
+    n_megaquick: 8
+    seed: 42
