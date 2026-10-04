@@ -106,6 +106,7 @@ The scripts in `scripts/analysis/` are post-hoc analyses over run directories pr
 | Script | Computes |
 |---|---|
 | `h3_systems_composite.py` | Per-cell systems reliability composite (latency, throughput, energy) per deployment scenario, and its correlation with capability |
+| `reference_sensitivity.py` | Rescales the latency, throughput, and energy reference values (x0.5, x1.5, x2, together and one at a time) and reports rank changes and the capability correlation under each scenario |
 | `composite_score.py` | Per-cell composite scores and Reliability Card data |
 | `reliability_function.py` | Empirical reliability function R(τ) = Pr(latency ≤ τ) per cell |
 | `determinism.py` | Run-to-run determinism over `--repeat k` runs |
